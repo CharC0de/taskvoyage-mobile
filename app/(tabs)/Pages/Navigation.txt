@@ -1,0 +1,70 @@
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { View, Text, Button, Alert, StyleSheet } from 'react-native';
+
+// Import your screens
+import HomeScreen from './screens/HomeScreen';
+import TasksScreen from './screens/TasksScreen';
+import CalendarScreen from './screens/CalendarScreen';
+import SettingsScreen from './screens/SettingsScreen';
+import LoginScreen from './screens/LoginScreen';
+
+const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
+
+function CustomDrawerContent({ navigation }) {
+  const handleLogout = () => {
+    Alert.alert('Confirm', 'Are you sure you want to logout your account?', [
+      {
+        text: 'Cancel',
+        style: 'cancel',
+      },
+      {
+        text: 'Yes',
+        onPress: () => navigation.replace('Login'),
+      },
+    ]);
+  };
+
+  return (
+    <View style={styles.drawerContent}>
+      <Button title="Home" onPress={() => navigation.navigate('Home')} />
+      <Button title="Tasks" onPress={() => navigation.navigate('Tasks')} />
+      <Button title="Calendar" onPress={() => navigation.navigate('Calendar')} />
+      <Button title="Settings" onPress={() => navigation.navigate('Settings')} />
+      <Button title="Logout" onPress={handleLogout} />
+    </View>
+  );
+}
+
+function DrawerNavigator() {
+  return (
+    <Drawer.Navigator drawerContent={(props) => <CustomDrawerContent {...props} />}>
+      <Drawer.Screen name="Home" component={HomeScreen} />
+      <Drawer.Screen name="Tasks" component={TasksScreen} />
+      <Drawer.Screen name="Calendar" component={CalendarScreen} />
+      <Drawer.Screen name="Settings" component={SettingsScreen} />
+    </Drawer.Navigator>
+  );
+}
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Home" component={DrawerNavigator} options={{ headerShown: false }} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+const styles = StyleSheet.create({
+  drawerContent: {
+    flex: 1,
+    paddingTop: 20,
+    paddingHorizontal: 10,
+  },
+});

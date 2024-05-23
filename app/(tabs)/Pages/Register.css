@@ -1,0 +1,127 @@
+/* Register.css */
+
+.container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Use min-height instead of height for mobile responsiveness */
+    background-color: #bca89f;
+  }
+  
+  .top-logo {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    position: absolute; /* Position relative to the container */
+    top: 20px; /* Adjust position for mobile */
+    left: 20px; /* Adjust position for mobile */
+  }
+  
+  .logo-icon {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    position: absolute; /* Position relative to the container */
+    top: 20px; /* Adjust position for mobile */
+    right: 20px; /* Adjust position for mobile */
+  }
+  
+  .form-container1 {
+    background-color: #ffffff;
+    padding: 20px; /* Adjust padding for smaller screens */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Poppins;
+    width: 90%; /* Set width to 90% of the container */
+    max-width: 400px; /* Limit maximum width for smaller screens */
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px; /* Add space between header and form */
+  }
+  
+  .register-title header {
+    text-align: center; /* Center align text */
+  }
+  
+  .register-title sub-heading {
+    text-align: center; /* Center align text */
+  }
+  
+  .heading {
+    font-size: 24px; /* Adjust font size for smaller screens */
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #5b3e31;
+  }
+  
+  .sub-heading {
+    font-size: 18px; /* Adjust font size for smaller screens */
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #5b3e31;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column; /* Change to column layout for mobile */
+    margin-bottom: 10px;
+  }
+  
+  .input-group label {
+    margin-bottom: 5px;
+    color: #3d291f;
+  }
+  
+  .input-group input {
+    width: 100%; /* Set width to 100% */
+    padding: 10px;
+    border: 1px solid #5b3e31;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Add space between inputs */
+  }
+  
+  .error-message {
+    color: red;
+  }
+  
+  .Button-container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px; /* Adjust padding for smaller screens */
+  }
+  
+  button {
+    background-color: #5b3e31;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px;
+  }
+  
+  button:hover {
+    background-color: #3d291f;
+  }
+  
+  .cloud-icon3 {
+    display: none; /* Hide cloud icon for mobile */
+  }
+  
+  .cloud-icon4 {
+    display: none; /* Hide cloud icon for mobile */
+  }
+  
+  .ship-icon2 {
+    display: none; /* Hide ship icon for mobile */
+  }
+  
+  .water-icon4 {
+    display: none; /* Hide water icon for mobile */
+  }
+  
+  .water-icon5 {
+    display: none; /* Hide water icon for mobile */
+  }
+  
